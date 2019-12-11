@@ -41,13 +41,14 @@ class Normalizer
   end
 
   def format_timestamp(time)
-    # need method to convert timezone to EST
     begin
       time_obj = DateTime.parse(time)
-      time_obj.iso8601
+      #convert timezone to EST
+      time = time_obj.new_offset(-5.0/24)
+      time.iso8601
     rescue ArgumentError
       # return to this, allowing valid leap year dates
-      time_obj = "Invalid Date"
+      "Invalid Date"
     end
   end
 

@@ -12,6 +12,11 @@ to test the broken utf-8 csv the command is
 ruby ./normalizer.rb < broken_sample.csv > output.csv
 ```
 
+## Running Tests
+
+In order to run specs, first comment out line `normalizer.write_file` in normalizer.rb
+and run `rspec` from the terminal. You may also have to run `bundle install` to install the rspec gem.
+
 This PR should achieve the following conversations:
 
 - [ ] The entire CSV is in the UTF-8 character set.
